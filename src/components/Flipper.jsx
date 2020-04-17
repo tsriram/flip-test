@@ -36,17 +36,13 @@ const Flipper = (props) => {
     });
   }, [props.children]);
 
-  return (
-    <div>
-      {React.Children.map(props.children, (child) => {
-        const ref = React.useRef();
-        refs[child.key] = ref;
-        return React.cloneElement(child, {
-          ref
-        });
-      })}
-    </div>
-  );
+  return React.Children.map(props.children, (child) => {
+    const ref = React.useRef();
+    refs[child.key] = ref;
+    return React.cloneElement(child, {
+      ref
+    });
+  });
 };
 
 export default Flipper;
