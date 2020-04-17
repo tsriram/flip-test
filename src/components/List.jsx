@@ -4,18 +4,23 @@ import ListItem from "./ListItem";
 import React from "react";
 import Flipper from "./Flipper";
 
-const initialList = ["One", "Two", "Three", "Four"];
+const size = 16;
+const initialList = Array(size)
+  .fill()
+  .map((item, index) => index + 1);
 
 const List = () => {
   const [list, setList] = React.useState(initialList);
 
   return (
     <React.Fragment>
-      <Flipper>
-        {list.map((listItem) => {
-          return <ListItem key={listItem}>{listItem}</ListItem>;
-        })}
-      </Flipper>
+      <div className="list">
+        <Flipper>
+          {list.map((item) => {
+            return <ListItem key={item} />;
+          })}
+        </Flipper>
+      </div>
       <div className="button-container">
         <button
           className="btn-shuffle"
