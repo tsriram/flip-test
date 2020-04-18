@@ -11,6 +11,8 @@
   height: 100px;
   background-color: cadetblue;
   border: 2px solid white;
+  font-size: 2rem;
+  color: white;
 }
 
 .list {

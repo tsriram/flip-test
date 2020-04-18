@@ -17,7 +17,7 @@ const List = () => {
       <div className="list">
         <Flipper>
           {list.map((item) => {
-            return <ListItem key={item} />;
+            return <ListItem key={item}>{item}</ListItem>;
           })}
         </Flipper>
       </div>
